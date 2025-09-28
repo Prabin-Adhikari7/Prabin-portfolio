@@ -8,7 +8,23 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/Landingpage.css">
 
-   
+   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("W5LKzsC_Ku_b2h-8C"); 
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      .then(function() {
+        alert("Message sent successfully ✅");
+      }, function(error) {
+        alert("Failed to send ❌ " + JSON.stringify(error));
+      });
+  });
+</script>
 </head>
 <body>
     <header class="header">
@@ -100,7 +116,7 @@
     <div class="Article-box">
         <h3>Inspiring <span>Quote of the day</span></h3>
         <h1></h1>
-        <iframe src="https://www.brainyquote.com/photos_tr/en/j/johnarchibaldwheeler/201717/johnarchibaldwheeler1-2x.jpg
+        <iframe src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fquotefancy.com%2Fm-j-demarco-quotes&psig=AOvVaw1V6ouMVhK0gJyfjkJaCdbo&ust=1759136504834000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPiJo7WM-48DFQAAAAAdAAAAABAE
         
         
         
@@ -166,18 +182,18 @@
 <section class="contact" id="contact">
     <div class="contact-box">
         <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="dwn-btn">
-        </form>
+         <form id="contact-form">
+      <div class="input-box">
+        <input type="text" name="from_name" placeholder="Full Name" required>
+        <input type="email" name="reply_to" placeholder="Email" required>
+      </div>
+      <div class="input-box">
+        <input type="number" name="mobile" placeholder="Mobile Number">
+        <input type="text" name="subject" placeholder="Subject">
+      </div>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="dwn-btn">
+         </form>
         <div class="social-media" style="">
             <h2 style="display:inline; color: whitesmoke;">Follow me at :</h2>
             <a id="final-one" href="https://github.com/Prabin-Adhikari7"><i class='bx bxl-github' ></i></a>
@@ -194,6 +210,7 @@
 <footer>
     
 </footer>
+<!-- EmailJS Script -->
 
 <script src="../js/Landingscript.js">
     
