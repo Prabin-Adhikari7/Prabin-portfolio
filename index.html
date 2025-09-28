@@ -9,21 +9,7 @@
     <link rel="stylesheet" href="./css/Landingpage.css">
 
    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("W5LKzsC_Ku_b2h-8C");   })();
 
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm("service_8wtpnof", "template_okytcpm", this)
-      .then(function() {
-        alert("✅ Message sent successfully!");
-      }, function(error) {
-        alert("❌ Failed to send message: " + JSON.stringify(error));
-      });
-  });
-</script>
 
 
 </head>
@@ -214,7 +200,21 @@
     
 </footer>
 <!-- EmailJS Script -->
+<script>
+  (function() {
+    emailjs.init("W5LKzsC_Ku_b2h-8C");   })();
 
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_8wtpnof", "template_okytcpm", this)
+      .then(function() {
+        alert("✅ Message sent successfully!");
+      }, function(error) {
+        alert("❌ Failed to send message: " + JSON.stringify(error));
+      });
+  });
+</script>
 <script src="../js/Landingscript.js">
     
 </script>
